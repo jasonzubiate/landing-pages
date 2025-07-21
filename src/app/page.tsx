@@ -1,103 +1,332 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="relative text-stone-900">
+      <nav className="fixed top-4 left-3 flex flex-col gap-px z-50">
+        <div className="overflow-hidden leading-none">
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 4,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            className="font-mono uppercase text-sm tracking-tight leading-none"
+          >
+            [1] Work
+          </motion.p>
+        </div>
+        <div className="overflow-hidden leading-none">
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 4.1,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            className="font-mono uppercase text-sm tracking-tight leading-none"
+          >
+            [2] Archive
+          </motion.p>
+        </div>
+        <div className="overflow-hidden leading-none">
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 4.2,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            className="font-mono uppercase text-sm tracking-tight leading-none"
+          >
+            [3] About
+          </motion.p>
+        </div>
+        <div className="overflow-hidden leading-none">
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 4.3,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            className="font-mono uppercase text-sm tracking-tight leading-none"
+          >
+            [4] Contact
+          </motion.p>
+        </div>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <motion.button
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          delay: 4,
+          ease: [0.65, 0, 0.35, 1],
+        }}
+        className="fixed top-4 right-4 z-50 cursor-pointer"
+      >
+        <img src="/circle-01.svg" alt="" className="h-8 w-8" />
+      </motion.button>
+
+      <div className="absolute left-0 top-1/2 translate-y-1/2 w-screen h-screen bg-stone-900">
+        <motion.div
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          animate={{ clipPath: "inset(0 0 0 0)" }}
+          transition={{
+            duration: 1.5,
+            delay: 4,
+            ease: [0.83, 0, 0.17, 1],
+          }}
+          className="w-full h-full relative"
+        >
+          <motion.div
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 1,
+              delay: 4.1,
+              ease: [0.83, 0, 0.17, 1],
+            }}
+            className="w-full h-full relative"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="https://images.unsplash.com/photo-1519913564575-d65ecde9d7f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="background"
+              fill
+              className="object-cover object-[0%_200%]"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <motion.div
+        animate={{ y: [0, "-11%", "-32%", "-50%"] }}
+        transition={{
+          duration: 4,
+          delay: 0.3,
+          ease: [0.65, 0, 0.35, 1],
+          times: [0, 0.25, 0.5, 0.75],
+        }}
+        className="absolute inset-0 w-screen h-screen bg-[#E1E1D8]"
+      >
+        <div className="flex items-end w-full h-full p-4">
+          <div className="absolute bottom-6 left-6 overflow-hidden">
+            <p className="flex text-[240px] font-semibold leading-[0.9] tracking-tight select-none">
+              <motion.span
+                animate={{ y: "-100%" }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.5,
+                  ease: [0.65, 0, 0.35, 1],
+                }}
+              >
+                0
+              </motion.span>
+              <motion.span
+                animate={{ y: "-100%" }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.6,
+                  ease: [0.65, 0, 0.35, 1],
+                }}
+              >
+                0
+              </motion.span>
+            </p>
+          </div>
+          <div className="absolute bottom-6 left-6 overflow-hidden">
+            <p className="flex text-[240px] font-semibold leading-[0.9] tracking-tight select-none">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.6,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                2
+              </motion.span>
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.7,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                2
+              </motion.span>
+            </p>
+          </div>
+          <div className="absolute bottom-6 left-6 overflow-hidden">
+            <p className="flex text-[240px] font-semibold leading-[0.9] tracking-tight">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 1.5,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                6
+              </motion.span>
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 1.6,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                4
+              </motion.span>
+            </p>
+          </div>
+          <div className="absolute bottom-6 left-6 overflow-hidden">
+            <p className="flex text-[240px] font-semibold leading-[0.9] tracking-tight">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 2.3,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                9
+              </motion.span>
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: ["100%", 0, "-100%"] }}
+                transition={{
+                  duration: 1.5,
+                  delay: 2.4,
+                  ease: [0.65, 0, 0.35, 1],
+                  times: [0, 0.5, 1],
+                }}
+              >
+                9
+              </motion.span>
+            </p>
+          </div>
+
+          <div className="absolute bottom-40 left-4 right-4 grid grid-cols-12 gap-4">
+            <div className="col-span-3">
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.4,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="font-mono uppercase text-sm tracking-tight leading-tight"
+                >
+                  Davide Prouvé
+                </motion.p>
+              </div>
+            </div>
+            <div className="flex flex-col col-span-3">
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.4,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="font-mono uppercase text-sm tracking-tight leading-tight"
+                >
+                  Director of Photography
+                </motion.p>
+              </div>
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.5,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="col-span-3 font-mono uppercase text-sm tracking-tight leading-tight"
+                >
+                  Madein Studio
+                </motion.p>
+              </div>
+            </div>
+
+            <div className="col-span-3 flex flex-col">
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.4,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="col-span-3 font-mono uppercase text-sm tracking-tight leading-tight"
+                >
+                  Fashion, Editorial, Portrait, Landscape,
+                </motion.p>
+              </div>
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.5,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="col-span-3 font-mono uppercase text-sm tracking-tight leading-tight"
+                >
+                  Still Life, Product, Entertainment
+                </motion.p>
+              </div>
+            </div>
+
+            <div className="col-start-12 col-span-1">
+              <div className="overflow-hidden">
+                <motion.p
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 4.4,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="font-mono uppercase text-sm tracking-tight leading-tight justify-self-end"
+                >
+                  2025
+                </motion.p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </motion.div>
+    </main>
   );
 }
